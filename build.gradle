@@ -48,18 +48,6 @@ sonar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-spotless {
-    java {
-        // Don't enforce the license, just the format.
-        clearSteps()
-        googleJavaFormat().aosp()
-    }
-    format 'javascript', {
-    	target 'src/main/resources/**/*.js'
-    	prettier().config(['filepath': 'file.js'])
-  	}
-}
-
 jib {
     to {
         image = 'sasanlabs/owasp-vulnerableapp:unreleased'
